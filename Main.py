@@ -1,8 +1,6 @@
 import BankData
 
-idValid = False
-count = 0
-
+# Set up customer data and transaction:
 cust1 = BankData.Customer("12345", "123")
 cust1.createAccount("a1", 12)
 cust1.createAccount("a2", 32)
@@ -15,6 +13,10 @@ cust2.getAccount("b2").depositCash(22)
 
 cust1.getAccount("a2").withdrawCash(3)
 cust2.getAccount("b2").withdrawCash(7)
+# End set up customer
+
+idValid = False
+count = 0
 
 print("Insert your card:")
 cardNum = input()
