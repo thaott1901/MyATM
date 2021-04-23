@@ -5,6 +5,8 @@ def getCustomer(cardId):
     if cardId in customerList:
         return customerList.get(cardId)
 
+def getCustomerList():
+    return customerList
 
 class Customer:
     def __init__(self, cardID, pin):

@@ -19,12 +19,17 @@ cust2.getAccount("b2").withdrawCash(7)
 idValid = False
 count = 0
 
-print("Insert your card:")
-cardNum = input()
-cust = BankData.getCustomer(cardNum)
+flagCard = False
+while not flagCard:
+    print("Insert your card:")
+    cardNum = input()
+    if cardNum in BankData.getCustomerList():
+        cust = BankData.getCustomer(cardNum)
+        flagCard = True
+    else:
+        print("Invalid card")
 
 accList = []
-print("Your card id is:", cust.getCardId())
 while not idValid:
     print("Input your pin number:")
     pinNum = input()
@@ -32,7 +37,7 @@ while not idValid:
         accList = cust.getAllAcounts()
         idValid = True
 
-print(accList)
+# print(accList)
 print("Your list of current accounts:")
 for acc in accList:
     print(acc.getAccId())
